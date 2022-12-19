@@ -1,12 +1,144 @@
-- 👋 Hi, I’m @hdhjbc和喜欢就喜欢
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+[General]
+# > 日志级别(true=开启。false=关闭）
+loglevel = warning
+# > 拒绝显示错误页面
+show-error-page-for-reject = true
+# > 增强版 Wi-Fi 助理
+allow-wifi-access = true
+# > All Hybrid 网络并发
+all-hybrid = false
+# > IPv6 支持（默认关闭）
+ipv6 = false
+# > 测试超时（秒）
+test-timeout = 5
+# > Internet 测试 URL
+internet-test-url = http://www.aliyun.com
+# > 代理测速 URL
+proxy-test-url = http://www.gstatic.com/generate_204
+# > GeoIP数据库
+geoip-maxmind-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
+# > 排除简单主机名
+exclude-simple-hostnames = true
+# > DNS 服务器
+dns-server = 119.29.29.29, 223.5.5.5
+hijack-dns = 8.8.8.8:53, 8.8.4.4:53
+# > 从 /etc/hosts 读取 DNS 记录
+read-etc-hosts = true
+# > 远程控制器
+http-api-web-dashboard = true
+use-default-policy-if-wifi-not-primary = false
+# > 跳过代理
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, localhost, *.local, *.crashlytics.com, www.baidu.com, yunbusiness.ccb.com
+# Surge VIF
+# tun-excluded-routes = 239.255.255.250/32
+tun-included-routes = 192.168.1.12/32
+# > Always Real IP Hosts
+always-real-ip = *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com*.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+# > 隐藏VPN标志符（默认开启）PS：surge5开启IPv6 VIF auto则无法隐藏
+# hide-vpn-icon = true
+# > WiFi辅助
+wifi-assist = true
+ipv6-vif = disabled
+use-local-host-item-for-proxy = false
+http-api = examplekey@0.0.0.0:6166
+http-api-tls = true
+udp-priority = false
 
-<!---
-hdhjbc/hdhjbc is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-好经济学家
-就像你就像你jbxnxjjx
+[Replica]
+# > 隐藏 Apple 请求
+hide-apple-request = 1
+# > 隐藏崩溃追踪器请求
+hide-crash-reporter-request = 1
+# > 隐藏 UDP 会话
+hide-udp = 1
+# > 关键词过滤器
+keyword-filter-type = none
+keyword-filter = -*.apple.com, -*.icloud.com, -*.mzstatic.com, ad
+
+[Proxy]
+🌐 全球直连 = direct
+
+[Proxy Group]
+# 用机场建一个策略组，然后在其他地区策略之类的引用
+Proxy = url-test, update-interval=600, tolerance=60, policy-regex-filter=^(?!.*?日本).*高级|实验性, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+代理链 = select, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=独角兽, policy-regex-filter=隧道
+WARP = select, WARP+, no-alert=0, hidden=0, include-all-proxies=0
+节点选择 = select, WARP, Proxy, 自动选择, no-alert=0, hidden=0, include-all-proxies=0, update-interval=600
+自动选择 = url-test, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0
+Google = select, WARP, 🇺🇲 美国节点, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=0
+YouTube = select, WARP, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, no-alert=0, hidden=0, include-all-proxies=0
+telegram = select, WARP, 🇨🇳台湾节点, 🇭🇰 香港节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, interval=1800, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0, persistent=1
+Netflix = select, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=^(?=.*((?i)Netflix|NF|原生|解锁))(?=.*((?i)🇸🇬|新加坡|狮|(?i)SG|Singapore))
+Spotify = select, DIRECT, 🇭🇰 香港节点, no-alert=0, hidden=0, include-all-proxies=0
+哔哩哔哩 = select, DIRECT, 🇭🇰 香港节点, 🇨🇳台湾节点, no-alert=0, hidden=0, include-all-proxies=0
+国外媒体 = fallback, Proxy, 节点选择, 自动选择, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, no-alert=0, hidden=1, include-all-proxies=0, persistent=1
+国内媒体 = select, DIRECT, no-alert=0, hidden=0, include-all-proxies=0
+微软服务 = fallback, DIRECT, Proxy, 节点选择, 自动选择, no-alert=0, hidden=1, include-all-proxies=0
+苹果服务 = select, DIRECT, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇺🇲 美国节点, no-alert=0, hidden=0, include-all-proxies=0
+🇭🇰 香港节点 = fallback, update-interval=600, policy-regex-filter=🇭🇰, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+🇨🇳台湾节点 = fallback, update-interval=600, policy-regex-filter=🇨🇳, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+🇸🇬 新加坡节点 = fallback, update-interval=600, policy-regex-filter=🇸🇬, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+🇺🇲 美国节点 = fallback, update-interval=600, policy-regex-filter=🇺🇸, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+🇯🇵 日本节点 = fallback, update-interval=600, policy-regex-filter=🇯🇵, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+🇰🇷韩国节点 = url-test, policy-regex-filter=🇰🇷|韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="花云, 独角兽"
+
+[Rule]
+DOMAIN,engage.cloudflareclient.com,WARP+ // Added for: http://engage.cloudflareclient.com/
+RULE-SET,https://raw.githubusercontent.com/ExaAlice/Alice/main/Rule/WARP.list,WARP
+DOMAIN-SUFFIX,degyax.com,Proxy // Added for: degyax.com:443
+DOMAIN-SUFFIX,mmstat.com,DIRECT // Added for: wgo.mmstat.com:443
+DOMAIN,https://cosxuxi.club/meenfox-kujou-sara.html?m=1,Proxy
+# Unbreak 后续规则修正
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,DIRECT,update-interval=43200
+# > 本地/局域网地址
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT,update-interval=43200
+# > SUB-Store专用
+DOMAIN,vercel.app,Proxy
+# > 广告拦截
+DOMAIN-SET,https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-surge2.txt,REJECT
+# > 微软服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list,微软服务
+# > 苹果服务
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,苹果服务,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppStore/AppStore.list,苹果服务,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleProxy/AppleProxy.list,Proxy,update-interval=43200
+# > 社交平台
+RULE-SET,https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list,DIRECT,update-interval=60
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,telegram,update-interval=600
+# > 流媒体
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list,YouTube,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTubeMusic/YouTubeMusic.list,YouTube,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list,Netflix,update-interval=43200
+DOMAIN-SUFFIX,api.bilibili.com,哔哩哔哩
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list,Spotify,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Bilibili.list,哔哩哔哩,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list,国内媒体,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list,国外媒体,update-interval=43200
+DOMAIN-KEYWORD,spotify,Spotify
+DOMAIN-KEYWORD,qq.com,DIRECT
+# > Proxy
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list,Google,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy.list,节点选择,update-interval=43200
+DOMAIN-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_Domain.list,节点选择
+DOMAIN-KEYWORD,google,Google
+# > China
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China.list,DIRECT
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaIPs/ChinaIPs.list,DIRECT
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Download/Download.list,DIRECT
+# speedtest测速
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list,Proxy
+# ASN
+RULE-SET,https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list,DIRECT,update-interval=21600
+# > GeoIP China
+# GEOIP,CN,DIRECT
+# > DNS 查询失败走 Final 规则
+FINAL,Proxy,dns-failed
+
+[MITM]
+skip-server-cert-verify = true
+tcp-connection = true
+
+[Script]
+# 疫情监控 = type=cron,cronexp=0 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,script-update-interval=0
+汇率监控 = type=cron,cronexp=0 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/exchange.js,script-update-interval=0
+哔站签到 = type=cron,cronexp=30 8 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js,script-update-interval=0
