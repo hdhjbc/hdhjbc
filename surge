@@ -60,9 +60,6 @@ keyword-filter = -*.apple.com, -*.icloud.com, -*.mzstatic.com, ad
 
 [Proxy Group]
 # 用机场建一个策略组，然后在其他地区策略之类的引用
-#Proxy = url-test, update-interval=600, tolerance=60, policy-regex-filter=^(?!.*?日本).*高级|实验性, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-#代理链 = select, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=独角兽, policy-regex-filter=隧道
-#WARP = select, WARP+, no-alert=0, hidden=0, include-all-proxies=0
 节点选择 = select, 自动选择, no-alert=0, hidden=0, include-all-proxies=0, update-interval=600
 自动选择 = url-test, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0
 Google = select, 🇺🇲 美国节点, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=0
@@ -83,17 +80,12 @@ Spotify = select, DIRECT, 🇭🇰 香港节点, no-alert=0, hidden=0, include-a
 🇰🇷韩国节点 = url-test, policy-regex-filter=🇰🇷|韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=
 
 [Rule]
-#DOMAIN,engage.cloudflareclient.com,WARP+ // Added for: http://engage.cloudflareclient.com/
-#RULE-SET,https://raw.githubusercontent.com/ExaAlice/Alice/main/Rule/WARP.list,WARP
-DOMAIN-SUFFIX,degyax.com,Proxy // Added for: degyax.com:443
-DOMAIN-SUFFIX,mmstat.com,DIRECT // Added for: wgo.mmstat.com:443
-DOMAIN,https://cosxuxi.club/meenfox-kujou-sara.html?m=1,Proxy
 # Unbreak 后续规则修正
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,DIRECT,update-interval=43200
 # > 本地/局域网地址
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT,update-interval=43200
 # > SUB-Store专用
-DOMAIN,vercel.app,Proxy
+DOMAIN,vercel.app,节点选择
 # > 广告拦截
 DOMAIN-SET,https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-surge2.txt,REJECT
 # > 微软服务
@@ -101,7 +93,7 @@ RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/r
 # > 苹果服务
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,苹果服务,update-interval=43200
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppStore/AppStore.list,苹果服务,update-interval=43200
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleProxy/AppleProxy.list,Proxy,update-interval=43200
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AppleProxy/AppleProxy.list,节点选择,update-interval=43200
 # > 社交平台
 RULE-SET,https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list,DIRECT,update-interval=60
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,telegram,update-interval=600
@@ -126,13 +118,13 @@ DOMAIN-KEYWORD,google,Google
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaIPs/ChinaIPs.list,DIRECT
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Download/Download.list,DIRECT
 # speedtest测速
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list,Proxy
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Speedtest/Speedtest.list,节点选择
 # ASN
 RULE-SET,https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list,DIRECT,update-interval=21600
 # > GeoIP China
 # GEOIP,CN,DIRECT
 # > DNS 查询失败走 Final 规则
-FINAL,Proxy,dns-failed
+FINAL,节点选择,dns-failed
 
 [MITM]
 skip-server-cert-verify = true
