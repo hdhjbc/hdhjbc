@@ -10,4 +10,8 @@ https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/surge
 手机上真不好用，淦
 
 https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/bilibili.sgmodule
+
 好耶，我也会做模块了
+
+感谢墨鱼，怎么@人来着呢？
+
