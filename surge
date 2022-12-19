@@ -60,31 +60,31 @@ keyword-filter = -*.apple.com, -*.icloud.com, -*.mzstatic.com, ad
 
 [Proxy Group]
 # 用机场建一个策略组，然后在其他地区策略之类的引用
-Proxy = url-test, update-interval=600, tolerance=60, policy-regex-filter=^(?!.*?日本).*高级|实验性, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-代理链 = select, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=独角兽, policy-regex-filter=隧道
-WARP = select, WARP+, no-alert=0, hidden=0, include-all-proxies=0
-节点选择 = select, WARP, Proxy, 自动选择, no-alert=0, hidden=0, include-all-proxies=0, update-interval=600
+#Proxy = url-test, update-interval=600, tolerance=60, policy-regex-filter=^(?!.*?日本).*高级|实验性, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
+#代理链 = select, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=独角兽, policy-regex-filter=隧道
+#WARP = select, WARP+, no-alert=0, hidden=0, include-all-proxies=0
+节点选择 = select, 自动选择, no-alert=0, hidden=0, include-all-proxies=0, update-interval=600
 自动选择 = url-test, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0
-Google = select, WARP, 🇺🇲 美国节点, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=0
-YouTube = select, WARP, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, no-alert=0, hidden=0, include-all-proxies=0
-telegram = select, WARP, 🇨🇳台湾节点, 🇭🇰 香港节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, interval=1800, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0, persistent=1
+Google = select, 🇺🇲 美国节点, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=0
+YouTube = select, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, no-alert=0, hidden=0, include-all-proxies=0
+telegram = select, 🇨🇳台湾节点, 🇭🇰 香港节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, interval=1800, tolerance=60, no-alert=0, hidden=0, include-all-proxies=0, persistent=1
 Netflix = select, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, no-alert=0, hidden=0, include-all-proxies=0, policy-regex-filter=^(?=.*((?i)Netflix|NF|原生|解锁))(?=.*((?i)🇸🇬|新加坡|狮|(?i)SG|Singapore))
 Spotify = select, DIRECT, 🇭🇰 香港节点, no-alert=0, hidden=0, include-all-proxies=0
 哔哩哔哩 = select, DIRECT, 🇭🇰 香港节点, 🇨🇳台湾节点, no-alert=0, hidden=0, include-all-proxies=0
-国外媒体 = fallback, Proxy, 节点选择, 自动选择, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, no-alert=0, hidden=1, include-all-proxies=0, persistent=1
+国外媒体 = fallback, 节点选择, 自动选择, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, update-interval=600, no-alert=0, hidden=1, include-all-proxies=0, persistent=1
 国内媒体 = select, DIRECT, no-alert=0, hidden=0, include-all-proxies=0
-微软服务 = fallback, DIRECT, Proxy, 节点选择, 自动选择, no-alert=0, hidden=1, include-all-proxies=0
+微软服务 = fallback, DIRECT, 节点选择, 自动选择, no-alert=0, hidden=1, include-all-proxies=0
 苹果服务 = select, DIRECT, 🇭🇰 香港节点, 🇨🇳台湾节点, 🇺🇲 美国节点, no-alert=0, hidden=0, include-all-proxies=0
-🇭🇰 香港节点 = fallback, update-interval=600, policy-regex-filter=🇭🇰, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-🇨🇳台湾节点 = fallback, update-interval=600, policy-regex-filter=🇨🇳, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-🇸🇬 新加坡节点 = fallback, update-interval=600, policy-regex-filter=🇸🇬, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-🇺🇲 美国节点 = fallback, update-interval=600, policy-regex-filter=🇺🇸, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-🇯🇵 日本节点 = fallback, update-interval=600, policy-regex-filter=🇯🇵, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=花云
-🇰🇷韩国节点 = url-test, policy-regex-filter=🇰🇷|韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="花云, 独角兽"
+🇭🇰 香港节点 = fallback, update-interval=600, policy-regex-filter=🇭🇰, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=
+🇨🇳台湾节点 = fallback, update-interval=600, policy-regex-filter=🇨🇳, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=
+🇸🇬 新加坡节点 = fallback, update-interval=600, policy-regex-filter=🇸🇬, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=
+🇺🇲 美国节点 = fallback, update-interval=600, policy-regex-filter=🇺🇸, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=
+🇯🇵 日本节点 = fallback, update-interval=600, policy-regex-filter=🇯🇵, no-alert=0, hidden=0, include-all-proxies=0, include-other-group=
+🇰🇷韩国节点 = url-test, policy-regex-filter=🇰🇷|韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=
 
 [Rule]
-DOMAIN,engage.cloudflareclient.com,WARP+ // Added for: http://engage.cloudflareclient.com/
-RULE-SET,https://raw.githubusercontent.com/ExaAlice/Alice/main/Rule/WARP.list,WARP
+#DOMAIN,engage.cloudflareclient.com,WARP+ // Added for: http://engage.cloudflareclient.com/
+#RULE-SET,https://raw.githubusercontent.com/ExaAlice/Alice/main/Rule/WARP.list,WARP
 DOMAIN-SUFFIX,degyax.com,Proxy // Added for: degyax.com:443
 DOMAIN-SUFFIX,mmstat.com,DIRECT // Added for: wgo.mmstat.com:443
 DOMAIN,https://cosxuxi.club/meenfox-kujou-sara.html?m=1,Proxy
