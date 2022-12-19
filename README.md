@@ -8,3 +8,7 @@ https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/surge
 
 
 手机上真不好用，淦
+
+
+https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/sgmodule
+好耶，我也会做模块了
