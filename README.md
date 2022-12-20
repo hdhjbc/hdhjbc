@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/surge
 
 https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/bilibili.sgmodule
 
-好耶，我也会做模块了
+好耶，我也会搓模块了
 
 感谢墨鱼大佬，怎么@人来着呢？
 
