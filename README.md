@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/surge
 
 手机上真不好用，淦
 
-https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/bilibili.sgmodule
+https://raw.githubusercontent.com/hdhjbc/hdhjbc/main/bilibiliAd.sgmodule
 
 好耶，我也会搓模块了
 
