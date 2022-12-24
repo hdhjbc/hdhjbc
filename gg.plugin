@@ -1,0 +1,16 @@
+#!name=测试
+#!desc=测试
+#!homepage=
+#!author=
+#!icon=
+
+[Script]
+
+http-request ttgame/game_farm/gift/list script-path=http://script.frp.aiuyo.com/scripts/dyhsb_ck.js, requires-body=false, timeout=10, tag=dyhsb_ck
+http-request flame/user_flame_info script-path=http://script.frp.aiuyo.com/scripts/dyhsb_ck.js, requires-body=false, timeout=10, tag=dyhsb_ck
+http-request (task|commerce)/lottery script-path=http://script.frp.aiuyo.com/scripts/dyhsb_ck.js, requires-body=false, timeout=10, tag=dyhsb_ck
+http-request task_system/task_done script-path=http://script.frp.aiuyo.com/scripts/dyhsb_ck.js, requires-body=false, timeout=10, tag=dyhsb_ck
+
+[MITM]
+
+hostname = *.huoshan.com,*.snssdk.com,*.zijieapi.com
