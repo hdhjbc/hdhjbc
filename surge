@@ -132,5 +132,5 @@ tcp-connection = true
 
 [Script]
 # 疫情监控 = type=cron,cronexp=0 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,script-update-interval=0
-汇率监控 = type=cron,cronexp=0 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/exchange.js,script-update-interval=0
-哔站签到 = type=cron,cronexp=30 8 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js,script-update-interval=0
+#汇率监控 = type=cron,cronexp=0 10 * * *,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/exchange.js,script-update-interval=0
+#哔站签到 = type=cron,cronexp=30 8 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js,script-update-interval=0
